@@ -17,7 +17,7 @@ import mods.utils.StringUtils;
 public class AntiDelete {
 
     public static List<Message> parseDeletedMessages(Map<Long, Message> activeMessages, List<Long> deletedIds, List<Message> deletedMessages) {
-        String mode = Prefs.getString(PreferenceKeys.ANTI_DELETE_MODE, "Off");
+        String mode = Prefs.getString(PreferenceKeys.ANTI_DELETE_MODE, "On");
 
         if (!mode.startsWith("Block Delete")) {
             return deletedMessages;
@@ -44,6 +44,8 @@ public class AntiDelete {
                 deletedMessages.add(message);
 
                 if (log) {
+
+                    // logs the message 
                     if (!StringUtils.isEmpty(message.getContent())) {
                         FileLogger.writeWithProfileInfo(message, "messages", message.getContent(), "Deleted Messages", "deleted");
                     } else if (message.hasAttachments()) {
