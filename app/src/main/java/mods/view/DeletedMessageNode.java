@@ -16,7 +16,7 @@ public class DeletedMessageNode extends StyleNode {
 
     public DeletedMessageNode(Context context) {
         super(getRenderInstructions());
-        addChild(new a(" (DELETED)"));
+        addChild(new a(" (Deleted)"));
     }
 
     private static List<CharacterStyle> getRenderInstructions() {
