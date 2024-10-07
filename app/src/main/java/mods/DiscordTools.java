@@ -228,6 +228,8 @@ public class DiscordTools {
         }
     }
 
+    //ImAwsum was here
+
     @NotNull
     public static Display getDisplay() {
         if (Build.VERSION.SDK_INT >= 30) {
